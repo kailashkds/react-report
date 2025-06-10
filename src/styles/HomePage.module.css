@@ -1,0 +1,154 @@
+.button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #b5d648;
+  padding: 0 10%;
+}
+
+.logo {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.header li {
+  margin-left: 2rem;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.header a:hover,
+.header a:active,
+.header a.active {
+  color: white;
+}
+
+.badge {
+  background-color: #cc2062;
+  color: white;
+  border-radius: 12px;
+  padding: 0 1rem;
+  margin-left: 0.5rem;
+}
+
+.table td,
+.table th {
+  padding: .2rem !important;
+}
+
+/* Link box styles */
+.linkBoxes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.box {
+  width: 300px;
+  height: 150px;
+  background-color: #ffffff;
+  border: 2px solid #2e3802;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.6rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.box:hover {
+  background-color: #a8b97e;
+}
+
+.signOutButton {
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+.signOutButton:hover {
+  background-color: #cc0000;
+}
+
+.profileSignOut {
+  display: flex;
+  gap: 10px;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.report-table th,
+.report-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.report-header {
+  font-weight: bold;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+.report-total {
+  font-weight: bold;
+  background-color: #eee;
+  border-top: 2px solid #000;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}

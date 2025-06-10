@@ -1,0 +1,74 @@
+.profileContainer {
+  background-color: #cae57090;
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileBox {
+  width: 500px;
+  margin: 60px auto;
+  padding: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.profileBox label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profileBox input[type="text"],
+.profileBox input[type="email"],
+.profileBox input[type="password"] {
+  width: calc(100% - 30px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.profileActions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileActions input[type="submit"],
+.profileActions button {
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profileActions input[type="submit"]:hover,
+.profileActions button:hover {
+  background-color: #0056b3;
+}
+
+.profileActions button {
+  margin-left: 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.profileActions button:hover {
+  text-decoration: underline;
+}
+
+.profileActions button,
+.profileActions input[type="submit"] {
+  width: 200px;
+}
+
+.profileBox input[type="email"][readonly] {
+  background-color: #ccc;
+}

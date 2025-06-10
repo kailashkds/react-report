@@ -1,0 +1,86 @@
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100px;
+}
+
+/* input[type="text"].form-control{
+  width: 100%;
+} */
+
+.container {
+  background-color: #cae57090;
+  padding: 20px; /* Add padding to create space between the box and the container edge */
+  width: 100%; /* Make the container take up the full width of its parent */
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  display: flex; /* Use flexbox to center content vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  /* padding: 0.5rem; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* margin-bottom: 20px; */
+}
+
+.signup label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.signup input[type="text"],
+.signup input[type="email"],
+.signup input[type="password"] {
+  width: calc(100% - 30px);
+  padding: 10px;
+}
+
+.signup {
+  width: 500px;
+  margin: 60px auto;
+  padding: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup input[type="submit"] {
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.signup button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 65px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.signup button:hover {
+  text-decoration: underline;
+}
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
