@@ -68,16 +68,22 @@ const ReportsPage = () => {
 
   const handleHeadersChange = async (e, type) => {
     const value = e.target.value;
+  
+    let updatedIndividual = individualHeaders;
+    let updatedTotal = totalHeaders;
+  
     if (type === 'individual') {
       setIndividualHeaders(value);
+      updatedIndividual = value;
     } else {
       setTotalHeaders(value);
+      updatedTotal = value;
     }
-
-    const months = individualHeaders.split(',').map(m => parseInt(m.trim())).filter(m => m >= 1 && m <= 12);
-    const years = totalHeaders.split(',').map(y => y.trim()).filter(Boolean);
+  
+    const months = updatedIndividual.split(',').map(m => parseInt(m.trim())).filter(m => m >= 1 && m <= 12);
+    const years = updatedTotal.split(',').map(y => y.trim()).filter(Boolean);
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
+  
     if (months.length && years.length && inputs.length) {
       const headers = [];
       years.forEach(year => {
@@ -85,6 +91,7 @@ const ReportsPage = () => {
           headers.push(`${monthNames[m - 1]} ${year.slice(-2)}`);
         });
       });
+  
       prepareInputValues(inputs, headers);
     }
   };
@@ -123,19 +130,17 @@ const ReportsPage = () => {
   
     const reportName = reports[selectedIndex].report_name;
   
-    const selectedLineNames = (selectedLines[reportName] || []).map(name => name.trim().toUpperCase());
+    const selectedLineNames = reportLines.map(name => name.trim().toUpperCase());
     const usedInputs = inputValues.filter(input =>
       selectedLineNames.includes(input.nameUpper)
     );
   
-    const inputsPayload = usedInputs.flatMap(input =>
-      input.values.map((val, idx) => ({
-        name: input.name,
-        description: input.description,
-        value: val
-      }))
-    );
-  
+    const inputsPayload = usedInputs.map(input => ({
+      name: input.name,
+      description: input.description,
+      values: input.values.map(val => val ?? "")
+    }));
+    
     const months = individualHeaders.split(',').map(m => parseInt(m.trim())).filter(m => m >= 1 && m <= 12);
     const years = totalHeaders.split(',').map(y => y.trim()).filter(Boolean);
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -143,7 +148,7 @@ const ReportsPage = () => {
     const individualHeadersMatrix = years.map(year =>
       months.map(m => `${monthNames[m - 1]} ${year.slice(-2)}`)
     );
-  
+
     const payload = {
       reports: [
         {

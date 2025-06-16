@@ -1,19 +1,28 @@
-import React, {useContext} from 'react';
-import {AuthContext} from './contexts/AuthContext';
-import AnonymousRoutes from './routes/AnonymousRoutes';
-import AuthenticatedRoutes from './routes/AuthenticatedRoutes';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
+import ReportPage from './components/ReportPage'; // adjust path if needed
 
+const App = (props) => {
+  const {
+    preload,
+    budgetsData,
+    reportType,
+    currentBudgetId,
+    lastHistoricalMonth,
+    budgets,
+    availableReports
+  } = props;
 
-const App = () => {
-    const {
-        isAuthenticated
-    } = useContext(AuthContext);
-
-    if (isAuthenticated) {
-        return <AuthenticatedRoutes/>;
-    }
-    return <AnonymousRoutes/>;
+  return (
+    <ReportPage
+      preload={preload}
+      budgetsData={budgetsData}
+      reportType={reportType}
+      currentBudgetId={currentBudgetId}
+      lastHistoricalMonth={lastHistoricalMonth}
+      budgets={budgets}
+      availableReports={availableReports}
+    />
+  );
 };
 
 export default App;
